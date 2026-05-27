@@ -7,7 +7,7 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en el menú */
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -77,21 +77,17 @@ nav ul li a:hover {
     color: var(--dorado);
 }
 
-/* 3. HERO SECTION */
+/* 3. Inicio */
 #inicio {
-    /* 1. Definimos la altura (90% de la pantalla para que se vea el inicio de la siguiente sección) */
     height: 90vh; 
     
-    /* 2. Ponemos la imagen de fondo con un degradado oscuro para que el texto blanco resalte */
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
                 url('./assets/inicio/portada.png'); 
     
-    /* 3. Centramos la imagen y hacemos que cubra todo el espacio sin deformarse */
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Opcional: crea un efecto 'Parallax' al hacer scroll */
+    background-attachment: fixed; 
 
-    /* 4. Centramos el contenido (h1, p, button) usando Flexbox */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -181,8 +177,8 @@ button:hover {
 .about-content {
     display: flex;
     align-items: center;
-    gap: 50px; /* Espacio entre el texto y la imagen */
-    flex-wrap: wrap; /* Para que en celulares la imagen se ponga debajo del texto */
+    gap: 50px;
+    flex-wrap: wrap;
 }
 
 .about-text {
@@ -200,7 +196,7 @@ button:hover {
 .about-text p {
     margin-bottom: 20px;
     font-size: 1.1rem;
-    color: #ccc; /* Un gris claro para que sea legible pero elegante */
+    color: #ccc;
 }
 
 .about-image {
@@ -211,14 +207,14 @@ button:hover {
 .about-image img {
     width: 100%;
     height: auto;
-    border-radius: 15px; /* Bordes redondeados para un toque moderno */
-    border: 2px solid var(--dorado); /* Marco dorado sutil */
+    border-radius: 15px;
+    border: 2px solid var(--dorado);
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 /* 7. FOOTER */
 .main-footer {
-    background-color: #000; /* Negro total para contrastar con el fondo */
+    background-color: #000;
     color: var(--blanco-hueso);
     padding: 40px 0 20px 0;
     border-top: 1px solid var(--dorado);
@@ -260,12 +256,9 @@ button:hover {
 
 
 
+/* --- SECCIÓN EL SALÓN--- */
 
-/* 9. ESTILOS ESPECÍFICOS PARA LA PÁGINA SALON.HTML */
-
-/* --- SECCIÓN EL SALÓN (PÁGINA INDEPENDIENTE) --- */
-
-/* Hero de la página Salón */
+/* Inicio */
 .salon-hero {
     height: 40vh;
     background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('./assets/inicio/salon.jpg');
@@ -291,23 +284,23 @@ button:hover {
 }
 
 .salon-grid {
-    display: flex; /* Cambiamos a flex para mejor control de anchos */
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 40px;
-    flex-wrap: wrap; /* Para que en móviles se apile uno abajo del otro */
+    flex-wrap: wrap;
 }
 
 /* Control del tamaño de la imagen */
 .salon-main-img {
     flex: 1;
     min-width: 300px;
-    max-width: 600px; /* AQUÍ controlas el ancho máximo de la foto */
+    max-width: 600px;
 }
 
 .salon-main-img img {
     width: 100%;
-    height: auto; /* Mantiene la proporción original de tu foto */
+    height: auto;
     border-radius: 8px;
     border: 2px solid var(--dorado);
     box-shadow: 0 15px 30px rgba(0,0,0,0.5);
@@ -351,13 +344,12 @@ button:hover {
 /* --- PÁGINA DE CONTACTO --- */
 
 .contacto-hero {
-    height: 45vh; /* Un poco más alta para que se luzca la foto */
-    /* Cambia 'foto-contacto.jpg' por la ruta de tu imagen, por ejemplo: ./assets/inicio/salon_detalle.jpg */
+    height: 45vh;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
                 url('./assets/inicio/contacto.jpg'); 
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Mismo efecto parallax que el inicio si lo deseas */
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
