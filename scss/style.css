@@ -120,16 +120,40 @@ header nav ul li a:hover, header nav ul li a.active {
 /* CONTENEDORES GENERALES */
 .container {
   max-width: 1200px;
-  margin: 80px auto;
+  margin: 0 auto 80px auto;
   padding: 0 20px;
 }
 
-.section-title {
+.services-section {
+  background-color: var(--negro-fondo);
+  /* Estilo Hero para la cabecera de la sección */
+}
+.services-section .services-hero {
+  height: 40vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../assets/inicio/servicios.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  border-bottom: 2px solid var(--dorado);
+  margin-bottom: 80px;
+  padding: 0 20px;
+}
+.services-section .services-hero .section-title {
   color: var(--dorado);
-  font-size: 2.5rem;
-  margin-bottom: 50px;
+  font-size: 3.5rem;
   text-transform: uppercase;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+  margin-bottom: 10px;
+}
+.services-section .services-hero .section-subtitle {
+  color: var(--blanco-hueso);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
 }
 
 .services-grid {
@@ -217,11 +241,6 @@ header nav ul li a:hover, header nav ul li a.active {
   background-color: var(--dorado);
   color: #000;
 }
-.services-grid .service-card .badge-premium {
-  background: linear-gradient(135deg, #222 0%, #444 100%);
-  color: var(--dorado);
-  border: 1px solid var(--dorado);
-}
 .services-grid .service-card .badge-lunch {
   background-color: var(--dorado-oscuro);
   color: #fff;
@@ -233,6 +252,11 @@ header nav ul li a:hover, header nav ul li a.active {
 .services-grid .service-card .badge-festa {
   background-color: #612d3d;
   color: #f8d7da;
+}
+.services-grid .service-card .badge-premium {
+  background: linear-gradient(135deg, #222 0%, #444 100%);
+  color: var(--dorado);
+  border: 1px solid var(--dorado);
 }
 
 /* BOTONES Y COMPONENTES */
