@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* 1. CONFIGURACIÓN GLOBAL Y SCROLLBAR */
+/* 1. CONFIGURACIÓN GRAL Y SCROLLBAR */
 * {
   margin: 0;
   padding: 0;
@@ -19,18 +19,18 @@ html {
   --blanco-hueso: #F5F5F5;
 }
 
-/* Personalización de la barra de scroll general */
+/* BARRA DE SCROLL GRAL */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 
-/* Fondo de la barra de scroll */
+/* FONDO BARRA DE SCROLL */
 ::-webkit-scrollbar-track {
   background: #0d0d0d;
 }
 
-/* Barra arrastrable (Thumb) */
+/* BARRA ARRASTRABLE */
 ::-webkit-scrollbar-thumb {
   background: var(--dorado);
   border-radius: 5px;
@@ -46,7 +46,7 @@ body {
   line-height: 1.6;
 }
 
-/* 2. NAVEGACIÓN */
+/* NAV BAR */
 header {
   background-color: rgba(0, 0, 0, 0.95);
   padding: 10px 0;
@@ -92,7 +92,7 @@ header nav ul li a:hover, header nav ul li a.active {
   color: var(--dorado);
 }
 
-/* 3. INICIO */
+/* INICIO */
 #inicio {
   height: 90vh;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../assets/inicio/portada.png");
@@ -117,7 +117,7 @@ header nav ul li a:hover, header nav ul li a.active {
   margin-bottom: 30px;
 }
 
-/* 4. SECCIÓN SERVICIOS Y CONTENEDORES GENERALES */
+/* CONTENEDORES GENERALES */
 .container {
   max-width: 1200px;
   margin: 80px auto;
@@ -134,28 +134,108 @@ header nav ul li a:hover, header nav ul li a.active {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  align-items: stretch;
 }
 .services-grid .service-card {
   background-color: var(--negro-tarjeta);
-  padding: 40px;
+  padding: 50px 30px 40px 30px;
   text-align: center;
-  border: 1px solid transparent;
-  transition: 0.4s;
-  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border-radius: 12px;
+  position: relative;
 }
 .services-grid .service-card:hover {
-  border-color: var(--dorado);
-  transform: translateY(-10px);
+  border-color: rgba(197, 160, 89, 0.5);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+.services-grid .service-card.popular {
+  border: 1px solid var(--dorado);
+  box-shadow: 0 5px 20px rgba(197, 160, 89, 0.1);
+}
+.services-grid .service-card.popular:hover {
+  box-shadow: 0 15px 35px rgba(197, 160, 89, 0.2);
 }
 .services-grid .service-card h3 {
-  color: var(--dorado);
+  color: var(--blanco-hueso);
+  font-size: 1.5rem;
   margin-bottom: 15px;
   text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.services-grid .service-card .card-desc {
+  font-size: 0.95rem;
+  color: #aaa;
+  margin-bottom: 25px;
+  min-height: 65px;
+}
+.services-grid .service-card .card-features {
+  list-style: none;
+  text-align: left;
+  border-top: 1px solid #333;
+  padding-top: 20px;
+}
+.services-grid .service-card .card-features li {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+}
+.services-grid .service-card .card-features li::before {
+  content: "✓";
+  color: var(--dorado);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+.services-grid .service-card {
+  /* DISEÑO DE LAS ETIQUETAS */
+}
+.services-grid .service-card .combo-badge {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 18px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+}
+.services-grid .service-card .badge-plata {
+  background-color: #4a4a4a;
+  color: #fff;
+}
+.services-grid .service-card .badge-oro {
+  background-color: var(--dorado);
+  color: #000;
+}
+.services-grid .service-card .badge-premium {
+  background: linear-gradient(135deg, #222 0%, #444 100%);
+  color: var(--dorado);
+  border: 1px solid var(--dorado);
+}
+.services-grid .service-card .badge-lunch {
+  background-color: var(--dorado-oscuro);
+  color: #fff;
+}
+.services-grid .service-card .badge-corp {
+  background-color: #2b3a4a;
+  color: #d1ecf1;
+}
+.services-grid .service-card .badge-festa {
+  background-color: #612d3d;
+  color: #f8d7da;
 }
 
-/* 5. BOTONES Y COMPONENTES */
+/* BOTONES Y COMPONENTES */
 button, .btn-secundario {
   background-color: var(--dorado);
   color: white;
@@ -175,7 +255,7 @@ button:hover, .btn-secundario:hover {
   box-shadow: 0 0 15px var(--dorado);
 }
 
-/* 6. SECCIÓN SOBRE NOSOTROS */
+/* SECCIÓN SOBRE NOSOTROS */
 .about-section {
   padding: 60px 20px;
 }
@@ -212,7 +292,7 @@ button:hover, .btn-secundario:hover {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* 7. FOOTER */
+/* FOOTER */
 .main-footer {
   background-color: #000;
   color: var(--blanco-hueso);
@@ -249,7 +329,7 @@ button:hover, .btn-secundario:hover {
   margin-bottom: 5px;
 }
 
-/* --- SECCIÓN EL SALÓN --- */
+/* SECCIÓN EL SALÓN */
 .salon-hero {
   height: 40vh;
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../assets/inicio/salon.jpg");
@@ -317,7 +397,7 @@ button:hover, .btn-secundario:hover {
   left: 0;
 }
 
-/* --- PÁGINA DE CONTACTO --- */
+/* --- SECCIÓN CONTACTO --- */
 .contacto-hero {
   height: 45vh;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../assets/inicio/contacto.jpg");
@@ -496,7 +576,7 @@ button:hover, .btn-secundario:hover {
   grid-column: span 2;
 }
 
-/* MEDIA QUERIES UNIFICADAS (RESPONSIVO Celulares) */
+/* MEDIA QUERIES */
 @media (max-width: 768px) {
   header nav ul {
     display: none;
