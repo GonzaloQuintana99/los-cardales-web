@@ -354,6 +354,7 @@ button:hover, .btn-secundario:hover {
 }
 
 /* SECCIÓN EL SALÓN */
+/* --- SECCIÓN EL SALÓN (PÁGINA INTERNA) --- */
 .salon-hero {
   height: 40vh;
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../assets/inicio/salon.jpg");
@@ -370,57 +371,100 @@ button:hover, .btn-secundario:hover {
   color: var(--dorado);
   font-size: 3rem;
   text-transform: uppercase;
+  margin-bottom: 5px;
 }
 
 .salon-detalles-page {
-  padding: 60px 20px;
+  padding: 80px 20px;
 }
 
-.salon-grid {
+.salon-features-container {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+.salon-features-container .salon-row {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: 60px;
   flex-wrap: wrap;
 }
-.salon-grid .salon-main-img {
+.salon-features-container .salon-row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.salon-features-container .salon-row .salon-main-img {
   flex: 1;
   min-width: 300px;
-  max-width: 600px;
+  max-width: 550px;
 }
-.salon-grid .salon-main-img img {
+.salon-features-container .salon-row .salon-main-img img {
   width: 100%;
-  height: auto;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 8px;
   border: 2px solid var(--dorado);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease;
 }
-.salon-grid .salon-info-box {
+.salon-features-container .salon-row .salon-main-img img:hover {
+  transform: scale(1.02);
+}
+.salon-features-container .salon-row .salon-info-box {
   flex: 1;
   min-width: 300px;
 }
-.salon-grid .salon-info-box h3 {
+.salon-features-container .salon-row .salon-info-box h3 {
   color: var(--dorado);
-  font-size: 2rem;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.salon-features-container .salon-row .salon-info-box p {
+  color: #ccc;
+  font-size: 1.1rem;
   margin-bottom: 20px;
 }
-.salon-grid .salon-list {
+.salon-features-container .salon-row .salon-list {
   list-style: none;
   margin-top: 20px;
 }
-.salon-grid .salon-list li {
-  margin-bottom: 12px;
-  padding-left: 20px;
+.salon-features-container .salon-row .salon-list li {
+  margin-bottom: 14px;
+  padding-left: 25px;
   position: relative;
+  color: var(--blanco-hueso);
 }
-.salon-grid .salon-list li:before {
+.salon-features-container .salon-row .salon-list li:before {
   content: "•";
   color: var(--dorado);
   font-weight: bold;
+  font-size: 1.5rem;
   position: absolute;
   left: 0;
+  top: -4px;
+}
+.salon-features-container .salon-row .salon-list li strong {
+  color: var(--dorado);
 }
 
+/* Ajustes responsivos para celulares de la sección El Salón */
+@media (max-width: 768px) {
+  .salon-features-container {
+    gap: 60px;
+  }
+  .salon-features-container .salon-row:nth-child(even) {
+    flex-direction: row;
+  }
+  .salon-features-container .salon-row .salon-main-img img {
+    height: 250px;
+  }
+  .salon-features-container .salon-row .salon-info-box h3 {
+    font-size: 1.8rem;
+  }
+}
 /* --- SECCIÓN CONTACTO --- */
 .contacto-hero {
   height: 45vh;
